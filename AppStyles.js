@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     },
     statusBar: {
         height: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-       
+       backgroundColor: "#00ffff",
     },
     
     headerSafeArea: {
