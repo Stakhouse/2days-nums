@@ -3,7 +3,7 @@ import { StyleSheet, Platform, StatusBar } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-     backgroundColor: '#fff',
+        resizeMode: 'cover',
     },
     statusBar: {
         height: Platform.OS === "android" ? StatusBar.currentHeight : 0,
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     
     headerSafeArea: {
         flex: 0,  // This is important for ensuring that SafeAreaView doesn't consume the whole screen height
-        backgroundColor: '#FFD700',
+        
     },
     header: {
         flexDirection: 'row',
@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
         padding: 10,
        // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 10: 24, 
        // This ensures that padding includes status bar height on Android
+       backgroundColor: '#FFD700',
     },
     iconButton: {
         margin: 5,
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     
+       
 });
 
 
