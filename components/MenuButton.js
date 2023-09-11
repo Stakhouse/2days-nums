@@ -4,8 +4,12 @@ import styles from '../AppStyles.js'; // Make sure this path is correct
 import IconAction from '../components/IconAction.js'; // We'll move this later, make sure the path is correct
 
 function MenuButton() {
-  const [visible, setVisible] = useState(false);
-  const toggleMenu = () => setVisible(!visible);
+  
+
+const [visible, setVisible] = useState(false);
+const toggleMenu = () => setVisible(!visible);
+  /*const [visible, setVisible] = useState(false);
+  const toggleMenu = () => setVisible(!visible);*/
 
   const handlePress = (item) => {
     console.log(`Selected menu item: ${item}`);
@@ -32,5 +36,4 @@ function MenuButton() {
     </Menu>
   );
 }
-
 export default MenuButton;

@@ -11,20 +11,35 @@ const styles = StyleSheet.create({
     },
     
     headerSafeArea: {
-        flex: 0,  // This is important for ensuring that SafeAreaView doesn't consume the whole screen height
+        paddingBottom: 20,
+        zIndex: 1,
+        flex: 0,
+        backgroundColor: 'transparent',
+        height: 50,  // Set a specific height
+        justifyContent: 'center',  // Center content vertically
         
     },
     header: {
+        zIndex: 1,
+        width: '100%',  // Stretch across the screen
+        height:60,
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: 10,
-       // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 10: 24, 
+  //justifyContent: 'space-evenly',
+  alignItems: 'center',  // Center items vertically
+  backgroundColor: 'transparent',  // Make it transparent
+  justifyContent: 'space-around',
+
+
+      // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight + 10: 24, 
        // This ensures that padding includes status bar height on Android
-       backgroundColor: '#FFD700',
+       //backgroundColor: '#FFD700',
     },
     iconButton: {
-        margin: 5,
-        
+        width: '40%',  // Reduce to a quarter of its current size
+        height: '70%',  // Reduce to a quarter of its current size
+       margin: '5',
+       justifyContent: 'space-evenly',
+        //padding:'14',
     },
     islandButtons: {
         flex: 1,   // Full space

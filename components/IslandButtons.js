@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, Image, ScrollView } from 'react-native';
-import styles from '../AppStyles.js';  // Make sure this path is correct
+import { TouchableOpacity, Image, ScrollView, View, StyleSheet } from 'react-native';
 
 const islandFlags = [
   require('../assets/flags/vc.png'),
@@ -15,14 +14,49 @@ const islandFlags = [
 
 function IslandButtons() {
   return (
-    <ScrollView contentContainerStyle={styles.islandButtons}>
-      {islandFlags.map((flag, index) => (
-        <TouchableOpacity key={`island-${index}`} style={styles.button}>
-          <Image source={flag} style={styles.buttonImage} resizeMode="contain" />
-        </TouchableOpacity>
-      ))}
-    </ScrollView>
+    <View style={styles.outerContainer}>
+      <View style={styles.emptySpace} />
+      <View style={styles.container}>
+        <ScrollView 
+          contentContainerStyle={styles.islandButtons}
+        >
+          {islandFlags.map((flag, index) => (
+            <TouchableOpacity key={`island-${index}`} style={styles.button}>
+              <Image source={flag} style={styles.buttonImage} resizeMode="cover" />
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+      </View>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  outerContainer: {
+    flex: 1,
+  },
+  emptySpace: {
+    flex: 1,
+  },
+  container: {
+    flex: 1,
+  },
+  islandButtons: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+  button: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    overflow: 'hidden',
+    margin: 5,
+  },
+  buttonImage: {
+    width: '100%',
+    height: '100%',
+  },
+});
 
 export default IslandButtons;

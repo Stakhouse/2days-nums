@@ -1,0 +1,54 @@
+rimport React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+//import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from '../screens/HomeScreen';
+import SettingsScreen from '../screens/SettingsScreen';
+import LoginScreen from '../screens/LoginScreen';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+function AppNavigation() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator initialRouteName="Home">
+      <Tab.Screen 
+  name="Home" 
+  component={HomeScreen} 
+  options={{
+    tabBarIcon: ({ color, size }) => (
+      <Icon name="home" color={color} size={size} />
+    ),
+  }} 
+/>
+
+        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen name="Login" component={LoginScreen} />
+
+       <Tab.Screen 
+  name="Menu" 
+  component={View} // Empty view
+  options={{
+    tabBarIcon: ({ color, size }) => (
+      <Icon name="menu" color={color} size={size} />
+    ),
+  }}
+  listeners={{
+    tabPress: (e) => {
+      // Prevent default action
+      e.preventDefault();
+      // Your menu logic here
+    },
+  }}
+/>
+
+
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
+
+
+
+export default AppNavigation;
+
