@@ -14,30 +14,19 @@ const islandFlags = [
 
 function IslandButtons() {
   return (
-    <View style={styles.outerContainer}>
-      <View style={styles.emptySpace} />
-      <View style={styles.container}>
-        <ScrollView 
-          contentContainerStyle={styles.islandButtons}
-        >
-          {islandFlags.map((flag, index) => (
-            <TouchableOpacity key={`island-${index}`} style={styles.button}>
-              <Image source={flag} style={styles.buttonImage} resizeMode="cover" />
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
-      </View>
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.islandButtons}>
+        {islandFlags.map((flag, index) => (
+          <TouchableOpacity key={`island-${index}`} style={styles.button}>
+            <Image source={flag} style={styles.buttonImage} resizeMode="cover" />
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  outerContainer: {
-    flex: 1,
-  },
-  emptySpace: {
-    flex: 1,
-  },
   container: {
     flex: 1,
   },
