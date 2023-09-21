@@ -5,20 +5,21 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import IslandButtons from '../components/IslandButtons.js';
 import { FloatingAction } from "react-native-floating-action";
-
+import SliderComponent from '../components/SliderComponent.js'; // Make sure to import the correct component
 const backgroundImage = require('../assets/caribbeanMap.png');
 
 function HomeScreen({ navigation }) {
-  const [loggedIn, setLoggedIn] = useState(false); // Set to false for testing
-  // ... rest of the code
+  const [loggedIn, setLoggedIn] = useState(false);
 
   return (
-    <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
-    <StatusBar backgroundColor="#00ffff" barStyle="dark-content" />
-    <ImageBackground source={backgroundImage} style={{...styles.container, flex: 1 }}>
-      <IslandButtons />
-    </ImageBackground>
-  
+    <View style={{ flex: 1 }}>
+      <StatusBar backgroundColor="#00ffff" barStyle="dark-content" />
+      <View style={{ flex: 0.5 }}>
+        <SliderComponent />
+      </View>
+      <ImageBackground source={backgroundImage} style={{ flex: 0.5 }}>
+        <IslandButtons />
+      </ImageBackground>
       <FloatingAction
         position="left"
         left={20}
@@ -30,7 +31,6 @@ function HomeScreen({ navigation }) {
         color="#00ffff"
         floatingIcon={<Icon name="qrcode-scan" size={24} color="white" />}
       />
-    
     </View>
   );
 }
