@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { View, ImageBackground, StatusBar } from 'react-native';
 import styles from '../AppStyles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import IslandButtons from '../components/IslandButtons.js';
 import { FloatingAction } from "react-native-floating-action";
-import SliderComponent from '../components/SliderComponent.js'; // Make sure to import the correct component
+import SliderComponent from '../components/SliderComponent.js';
 const backgroundImage = require('../assets/caribbeanMap.png');
 
 function HomeScreen({ navigation }) {
@@ -24,9 +23,7 @@ function HomeScreen({ navigation }) {
         position="left"
         left={20}
         bottom={20}
-        onPressMain={() => {
-          console.log("FAB pressed");
-        }}
+        onPressMain={() => {}}
         showBackground={false}
         color="#00ffff"
         floatingIcon={<Icon name="qrcode-scan" size={24} color="white" />}
@@ -34,5 +31,4 @@ function HomeScreen({ navigation }) {
     </View>
   );
 }
-
 export default HomeScreen;

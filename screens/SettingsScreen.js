@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import styles from '../AppStyles';  // Adjust this path to where your styles are located
+import styles from '../AppStyles';
 import { Button, Switch } from 'react-native-paper';
 import ImagePicker from 'react-native-image-picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -14,9 +14,7 @@ const pickImage = () => {
     },
   };
   ImagePicker.showImagePicker(options, (response) => {
-    if (response.uri) {
-      console.log('Image URI: ', response.uri);
-    }
+    if (response.uri) {}
   });
 };
 
@@ -36,5 +34,4 @@ function SettingsScreen() {
     </View>
   );
 }
-
 export default SettingsScreen;
