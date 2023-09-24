@@ -9,14 +9,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Tab = createBottomTabNavigator();
 
-function AppNavigation() {
+const AppNavigation: React.FC = () => {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
 
-  const handlePress = (item) => {
+  const handlePress = (item: string) => {
     console.log(`Selected menu item: ${item}`);
     toggleMenu();
   };

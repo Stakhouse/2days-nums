@@ -1,13 +1,33 @@
 import React, { useState } from 'react';
 import { View, ImageBackground, StatusBar } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native';
 import styles from '../AppStyles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import IslandButtons from '../components/IslandButtons.js';
+import IslandButtons from '../components/IslandButtons';
 import { FloatingAction } from "react-native-floating-action";
-import SliderComponent from '../components/SliderComponent.js';
+import SliderComponent from '../components/SliderComponent';
+
 const backgroundImage = require('../assets/caribbeanMap.png');
 
-function HomeScreen({ navigation }) {
+type RootStackParamList = {
+  HomeScreen: undefined;
+  // Add other screen names and their params here
+};
+
+type HomeScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'HomeScreen'
+>;
+
+type HomeScreenRouteProp = RouteProp<RootStackParamList, 'HomeScreen'>;
+
+type Props = {
+  navigation: HomeScreenNavigationProp;
+  route: HomeScreenRouteProp;
+};
+
+const HomeScreen: React.FC<Props> = ({ navigation, route }) => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   return (
@@ -30,5 +50,6 @@ function HomeScreen({ navigation }) {
       />
     </View>
   );
-}
+};
+
 export default HomeScreen;
