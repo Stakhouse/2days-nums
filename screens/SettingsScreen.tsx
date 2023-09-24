@@ -13,18 +13,18 @@ const pickImage = () => {
       path: 'images',
     },
   };
-  ImagePicker.showImagePicker(options, (response) => {
+  ImagePicker.showImagePicker(options, (response: any) => { // Added type definition here
     if (response.uri) {}
   });
 };
 
-function SettingsScreen() {
+const SettingsScreen: React.FC = () => { // Added React.FC for functional component type
   return (
     <View style={styles.container}>
       <Button mode="outlined" onPress={pickImage}>Change Profile Picture</Button>
       <Icon name="user-circle" size={100} color="#000" />
       <Button mode="outlined">Edit Profile</Button>
-      <View style={styles.settingRow}>
+      <View style={styles.settingRow}> {/* Make sure settingRow is defined in AppStyles */}
         <Text>Enable Notifications</Text>
         <Switch value={true} onValueChange={() => {}} />
       </View>
@@ -33,5 +33,6 @@ function SettingsScreen() {
       <Button mode="outlined">Logout</Button>
     </View>
   );
-}
+};
+
 export default SettingsScreen;

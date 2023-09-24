@@ -7,7 +7,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { View, Text, TouchableOpacity, StyleSheet, Modal } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const Tab = createBottomTabNavigator();
+type RootStackParamList = {
+  Home: undefined;
+  Settings: undefined;
+  Login: undefined;
+  Menu: undefined;
+};
+
+const Tab = createBottomTabNavigator<RootStackParamList>();
 
 const AppNavigation: React.FC = () => {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -24,8 +31,9 @@ const AppNavigation: React.FC = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator initialRouteName="Home">
-        {/* ...existing Tab.Screen components... */}
-        <Tab.Screen name="Home" component={HomeScreen} 
+        <Tab.Screen 
+          name="Home" 
+          component={HomeScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="home" color={color} size={size} />
@@ -34,7 +42,7 @@ const AppNavigation: React.FC = () => {
         />
         <Tab.Screen 
           name="Settings" 
-          component={SettingsScreen} 
+          component={SettingsScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="cog" color={color} size={size} />
@@ -43,7 +51,7 @@ const AppNavigation: React.FC = () => {
         />
         <Tab.Screen 
           name="Login" 
-          component={LoginScreen} 
+          component={LoginScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="user" color={color} size={size} />
@@ -52,7 +60,7 @@ const AppNavigation: React.FC = () => {
         />
         <Tab.Screen 
           name="Menu" 
-          component={View} // Empty view
+          component={View}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Icon name="bars" color={color} size={size} />
@@ -79,7 +87,6 @@ const AppNavigation: React.FC = () => {
           <TouchableOpacity onPress={() => handlePress('Profile / Account')}>
             <Text style={styles.menuItem}>Profile / Account</Text>
           </TouchableOpacity>
-          {/* ...add more menu items here... */}
           <TouchableOpacity onPress={() => handlePress('Tutorials / Walkthrough')}>
             <Text style={styles.menuItem}>Tutorials / Walkthrough</Text>
           </TouchableOpacity>

@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     iconButton: {
         width: '40%',  // Reduce to a quarter of its current size
         height: '70%',  // Reduce to a quarter of its current size
-       margin: '5',
+       margin: 5,
        justifyContent: 'space-evenly',
         //padding:'14',
     },
@@ -61,6 +61,22 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
+    // Inside AppStyles.ts or AppStyles.js
+settingRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 16,
+  },
+  // Inside AppStyles.ts or AppStyles.js
+title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginVertical: 20,
+  },
+  
+  
     
        
 });
