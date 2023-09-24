@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { View, Text, Alert, Dimensions } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
-export default function SliderComponent() {
+interface SliderProps {
+  // Define your prop types here
+}
+
+const SliderComponent: React.FC<SliderProps> = (props) => {
   const [images, setImages] = useState([
     'https://placeimg.com/640/480/any',
     'https://placeimg.com/640/480/any',
@@ -35,4 +39,6 @@ export default function SliderComponent() {
       />
     </View>
   );
-}
+};
+
+export default SliderComponent;
