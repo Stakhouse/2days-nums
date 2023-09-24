@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
 import styles from '../AppStyles.js';
-import MenuButton from './MenuButton';
-import IconAction from './IconAction';
+import MenuButton from './MenuButton.js';
+import IconAction from './IconAction.js';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 function Header({ loggedIn, navigation }) {

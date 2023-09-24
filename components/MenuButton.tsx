@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { IconButton, Menu } from 'react-native-paper';
 import styles from '../AppStyles.js';
-import IconAction from '../components/IconAction.js';
+import IconAction from './IconAction.js';
 
 function MenuButton() {
   const [visible, setVisible] = useState(false);
