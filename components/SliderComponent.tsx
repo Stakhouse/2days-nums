@@ -19,7 +19,7 @@ const SliderComponent: React.FC<SliderProps> = (props) => {
     Alert.alert('Coming soon!');
   };
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item =String}) => {
     return (
       <View>
         <Text onPress={onImagePress}>{item}</Text>
