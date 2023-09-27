@@ -1,3 +1,4 @@
+import { TabActions } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, Text, Alert, Dimensions } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
