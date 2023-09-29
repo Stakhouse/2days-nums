@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { Menu } from 'react-native-paper';
 import IconAction from './IconAction.js';
 
-function MenuButton() {
+const MenuButton: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const toggleMenu = () => setVisible(!visible);
 
-  const handlePress = (item: string) => { // Explicitly specify the type here
+  const handlePress = (item: string) => {
     toggleMenu();
-    // Do something with the item, e.g., navigate to a different screen
     console.log(`Selected menu item: ${item}`);
   };
 
@@ -30,6 +29,6 @@ function MenuButton() {
       <Menu.Item onPress={() => handlePress('Tutorials / Walkthrough')} title="Tutorials / Walkthrough" />
     </Menu>
   );
-}
+};
 
 export default MenuButton;
