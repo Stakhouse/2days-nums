@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 import { View, Text, Alert, Dimensions } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 
+// Updated SliderProps interface
 interface SliderProps {
-  // Define your prop types here
+  images?: string[];
+  autoplay?: boolean;
+  itemWidth?: number;
+  loop?: boolean;
 }
 
 const SliderComponent: React.FC<SliderProps> = (props) => {
@@ -31,12 +35,12 @@ const SliderComponent: React.FC<SliderProps> = (props) => {
   return (
     <View style={{ flex: 1 }}>
       <Carousel
-        data={images}
+        data={props.images || images}
         renderItem={renderItem}
         sliderWidth={viewportWidth}
-        itemWidth={viewportWidth - 60}
-        autoplay
-        loop
+        itemWidth={props.itemWidth || viewportWidth - 60}
+        autoplay={props.autoplay || true}
+        loop={props.loop || true}
       />
     </View>
   );

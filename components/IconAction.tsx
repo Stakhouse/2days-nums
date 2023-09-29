@@ -1,8 +1,14 @@
 import React from 'react';
 import { IconButton } from 'react-native-paper';
-import styles from '../AppStyles';  // Make sure the path is correct
+import styles from '../AppStyles';  // Path already correct
 
-const IconAction = ({ icon, action }) => (
+// Define TypeScript interface for props
+interface IconActionProps {
+  icon: string;
+  action: () => void;
+}
+
+const IconAction: React.FC<IconActionProps> = ({ icon, action }) => (
   <IconButton
     icon={icon}
     size={40}

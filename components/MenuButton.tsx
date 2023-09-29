@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { Menu } from 'react-native-paper';
-import IconAction from './IconAction.js';
+import IconAction from './IconAction';  // Removed .js extension
 
-const MenuButton: React.FC = () => {
+// Define TypeScript interface for future props
+interface MenuButtonProps {
+  // Future props can be defined here
+}
+
+const MenuButton: React.FC<MenuButtonProps> = () => {
   const [visible, setVisible] = useState(false);
   const toggleMenu = () => setVisible(!visible);
 
@@ -27,6 +32,7 @@ const MenuButton: React.FC = () => {
       <Menu.Item onPress={() => handlePress('Social')} title="Social" />
       <Menu.Item onPress={() => handlePress('Logout / Sign Out')} title="Logout / Sign Out" />
       <Menu.Item onPress={() => handlePress('Tutorials / Walkthrough')} title="Tutorials / Walkthrough" />
+
     </Menu>
   );
 };

@@ -1,18 +1,23 @@
 import React from 'react';
 import { TouchableOpacity, Image, ScrollView, View, StyleSheet } from 'react-native';
 
-const islandFlags = [
-  require('../assets/flags/vc.png'),
-  require('../assets/flags/bb.png'),
-  require('../assets/flags/tt.png'),
-  require('../assets/flags/lc.png'),
-  require('../assets/flags/dm_enhanced.png'),
-  require('../assets/flags/gd.png'),
-  require('../assets/flags/jm.png'),
-  require('../assets/flags/an.png'),
-];
+// Define TypeScript interface for future props
+interface IslandButtonsProps {
+  // Future props can be defined here
+}
 
-function IslandButtons() {
+const IslandButtons: React.FC<IslandButtonsProps> = () => {
+  const islandFlags = [
+    require('../assets/flags/vc.png'),
+    require('../assets/flags/bb.png'),
+    require('../assets/flags/tt.png'),
+    require('../assets/flags/lc.png'),
+    require('../assets/flags/dm_enhanced.png'),
+    require('../assets/flags/gd.png'),
+    require('../assets/flags/jm.png'),
+    require('../assets/flags/an.png'),
+  ];
+
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.islandButtons}>
@@ -24,7 +29,7 @@ function IslandButtons() {
       </ScrollView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {

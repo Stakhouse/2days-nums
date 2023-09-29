@@ -1,11 +1,17 @@
 import React from 'react';
 import { View } from 'react-native';
-import styles from '../AppStyles.js';
-import MenuButton from './MenuButton.js';
-import IconAction from './IconAction.js';
+import styles from '../AppStyles';
+import MenuButton from './MenuButton';
+import IconAction from './IconAction';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-function Header({ loggedIn, navigation }) {
+// Define TypeScript interface for props
+interface HeaderProps {
+  loggedIn?: boolean;
+  navigation: any; // You can replace 'any' with the specific type for navigation
+}
+
+const Header: React.FC<HeaderProps> = ({ loggedIn, navigation }) => {
   return (
     <SafeAreaView style={styles.headerSafeArea} edges={['bottom']}>
       <View style={styles.header}>
@@ -15,17 +21,16 @@ function Header({ loggedIn, navigation }) {
       </View>
     </SafeAreaView>
   );
-}
+};
 
-function onAccountPressed(loggedIn, navigation) {
+const onAccountPressed = (loggedIn?: boolean, navigation?: any) => {
   if (!loggedIn) {
-    navigation.navigate('Login');
+    navigation?.navigate('Login');
   }
-}
+};
 
-function onSettingsPressed(navigation) {
+const onSettingsPressed = (navigation: any) => {
   navigation.navigate('Settings');
-}
+};
 
 export default Header;
-
