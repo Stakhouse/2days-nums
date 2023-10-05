@@ -4,9 +4,12 @@ import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import LoginScreen from '../screens/LoginScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MenuButton from '../components/MenuButton';
+
+const MenuButtonWrapper: React.FC = () => {
+  return <MenuButton /* your props here */ />;
+};
 
 type RootStackParamList = {
   Home: undefined;
@@ -49,12 +52,12 @@ const AppNavigation: React.FC = () => {
           }}
         />
         <Tab.Screen 
-          name="Menu" 
-          component={MenuButton as React.ComponentType<any>}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <Icon name="bars" color={color} size={size} />
-            ),
+  name="Menu" 
+  component={MenuButtonWrapper}
+  options={{
+    tabBarIcon: ({ color, size }) => (
+      <Icon name="bars" color={color} size={size} />
+    ),
           }}
         />
       </Tab.Navigator>

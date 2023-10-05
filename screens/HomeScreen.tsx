@@ -21,8 +21,8 @@ type HomeScreenNavigationProp = StackNavigationProp<
 type HomeScreenRouteProp = RouteProp<RootStackParamList, 'HomeScreen'>;
 
 type Props = {
-  navigation: HomeScreenNavigationProp;
-  route: HomeScreenRouteProp;
+  navigation?: HomeScreenNavigationProp;  // Made optional
+  route?: HomeScreenRouteProp;  // Made optional
 };
 
 const HomeScreen: React.FC<Props> = ({ navigation, route }) => {
