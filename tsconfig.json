@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "lib": ["esnext", "dom"]
   },
-  "extends": "expo/tsconfig.base",
-  "include": ["./**/*.ts", "./**/*.tsx"],
-  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
+  "extends": "./tsconfig.base",
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+, "App.tsx"  ]
 }

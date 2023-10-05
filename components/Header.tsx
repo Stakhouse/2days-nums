@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import styles from '../AppStyles';
+import styles from '../src/AppStyles';
 import MenuButton from './MenuButton';
 import IconAction from './IconAction';
 import { SafeAreaView } from 'react-native-safe-area-context';

@@ -1,32 +1,36 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import styles from '../AppStyles';
+import styles from '../src/AppStyles';
 import { Button, Switch } from 'react-native-paper';
-import ImagePicker from 'react-native-image-picker';
+import { launchImageLibrary, MediaType, Asset } from 'react-native-image-picker';  // Import MediaType
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const pickImage = () => {
   const options = {
-    title: 'Select Avatar',
-    storageOptions: {
-      skipBackup: true,
-      path: 'images',
-    },
+    mediaType: 'photo' as MediaType,  // Set mediaType as MediaType
   };
-  ImagePicker.showImagePicker(options, (response: any) => { // Added type definition here
-    if (response.uri) {}
+
+  launchImageLibrary(options, (response) => {
+    if (response.assets) {
+      const asset: Asset = response.assets[0];
+      if (asset.uri) {
+        // Handle the chosen image URI here
+      }
+    }
   });
 };
 
-const SettingsScreen: React.FC = () => { // Added React.FC for functional component type
+const SettingsScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Button mode="outlined" onPress={pickImage}>Change Profile Picture</Button>
       <Icon name="user-circle" size={100} color="#000" />
       <Button mode="outlined">Edit Profile</Button>
-      <View style={styles.settingRow}> {/* Make sure settingRow is defined in AppStyles */}
+      <View style={styles.settingRow}>
         <Text>Enable Notifications</Text>
-        <Switch value={true} onValueChange={() => {}} />
+        <Switch value={true} onValueChange={() => {
+          // Implement your switch handler here
+        }} />
       </View>
       <Button mode="outlined">Change Password</Button>
       <Button mode="outlined">Change Email</Button>

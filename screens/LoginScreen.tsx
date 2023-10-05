@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TextInput } from 'react-native';
-import styles from '../AppStyles'; // Adjust this path to where your styles are located
+import styles from '../src/AppStyles'; // Adjust this path to where your styles are located
 
 // Define TypeScript interface for future props
 interface LoginScreenProps {

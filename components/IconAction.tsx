@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconButton } from 'react-native-paper';
-import styles from '../AppStyles';  // Path already correct
+import styles from '../src/AppStyles';  // Path already correct
 
 // Define TypeScript interface for props
 interface IconActionProps {
