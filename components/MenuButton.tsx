@@ -22,7 +22,15 @@ const MenuButton: React.FC<MenuButtonProps> = ({ isVisible, toggleMenu }) => {
       onDismiss={toggleMenu}
       anchor={<IconAction icon="menu" action={toggleMenu} />}
     >
-      {/* Your menu items here */}
+      <Menu.Item onPress={() => handlePress('Profile / Account')} title="Profile / Account" />
+      <Menu.Item onPress={() => handlePress('Settings')} title="Settings" />
+      <Menu.Item onPress={() => handlePress('Notifications')} title="Notifications" />
+      <Menu.Item onPress={() => handlePress('Help & Support')} title="Help & Support" />
+      <Menu.Item onPress={() => handlePress('About')} title="About" />
+      <Menu.Item onPress={() => handlePress('Features / Scan Tickets / Search')} title="Features / Scan Tickets / Search" />
+      <Menu.Item onPress={() => handlePress('Social')} title="Social" />
+      <Menu.Item onPress={() => handlePress('Logout / Sign Out')} title="Logout / Sign Out" />
+      <Menu.Item onPress={() => handlePress('Tutorials / Walkthrough')} title="Tutorials / Walkthrough" />
     </Menu>
   );
 };
